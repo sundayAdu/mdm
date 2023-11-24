@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ Copyright (c) 2014, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.wso2.iot.agent"
+    android:sharedUserId="io.entgra.iot.community.agent">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permisssion.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="org.wso2.iot.system.service.permission.ACCESS" />
+    <uses-permission android:name="org.wso2.iot.agent.permission.ACCESS" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <permission android:name="android.permission.REBOOT" />
+    <permission android:name="android.permission.READ_LOGS" />
+    <permission
+        android:name="org.wso2.iot.agent.permission.ACCESS"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="${applicationId}.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <application
+        android:name=".AgentApplication"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.RegistrationActivity" />
+        <activity
+            android:name=".activities.DisplayDeviceInfoActivity"
+            android:label="@string/title_activity_display_device_info" />
+        <activity
+            android:name=".activities.EnableDeviceAdminActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/title_activity_display_device_info" />
+
+        <receiver
+            android:name=".services.AgentDeviceAdminReceiver"
+            android:exported="true"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <intent-filter>
+
+                <!-- This action is required -->
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+                <action android:name="android.app.action.PROFILE_PROVISIONING_COMPLETE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/agent_device_admin" />
+        </receiver>
+        <receiver android:name=".services.AlarmReceiver" />
+        <receiver android:name=".events.EventAlarmReceiver" />
+        <receiver android:name=".utils.FileUploadReceiver" />
+        <receiver android:name=".utils.FileUploadCancelReceiver" />
+        <receiver
+            android:name=".services.AgentStartupReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="org.ws2.iot.agent.APPLICATION_UPDATED" />
+                <action android:name="org.ws2.iot.agent.APPLICATION_CRASHED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".services.NetworkConnectedReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".services.NotificationReceiver"
+            android:exported="false">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".services.SystemServiceResponseReceiver"
+            android:exported="false">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".events.listeners.ApplicationStateListener">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_DATA_CLEARED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".services.FileUploadService" />
+        <service android:name=".services.FileDownloadService" />
+        <service
+            android:name=".services.ApplicationManagementService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="org.wso2.iot.agent.permission.ACCESS">
+            <intent-filter>
+                <action android:name="org.wso2.iot.agent.START_SERVICE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".services.EnrollmentService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="org.wso2.iot.agent.permission.ACCESS">
+            <intent-filter>
+                <action android:name="org.wso2.iot.agent.enrollment.START_SERVICE" />
+            </intent-filter>
+        </service>
+        <service android:name=".services.FCMMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".services.location.LocationService"
+            android:enabled="true" />
+        <service
+            android:name=".services.NetworkInfoService"
+            android:enabled="true" />
+
+        <activity android:name=".activities.AlreadyRegisteredActivity" />
+        <activity
+            android:name=".activities.AuthenticationActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".activities.AuthenticationErrorActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activities.ServerConfigsActivity" />
+        <activity
+            android:name=".activities.DisclaimerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name=".activities.PinCodeActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".activities.AlertActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar" />
+        <activity
+            android:name=".activities.LockActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_lock" />
+        <!-- Managed Profile Manifest items -->
+        <activity
+            android:name=".activities.EnableProfileActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".WorkProfileManager"
+            android:label="@string/title_activity_notify"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activities.WorkProfileSelectionActivity" />
+        <activity
+            android:name=".activities.AppLockActivity"
+            android:label="@string/title_activity_alert"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <service
+            android:name=".services.AppLockService"
+            android:exported="false"
+            android:permission="org.wso2.iot.agent.permission.ACCESS" />
+
+        <activity
+            android:name=".activities.SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".services.LocationUpdateReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="org.ws2.iot.agent.LOCATION_UPDATE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- android 7 requirement -->
+        <provider
+            android:name=".AgentFileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

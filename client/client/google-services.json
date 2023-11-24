@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1014898535525",
+    "project_id": "mdmtest-2314f",
+    "storage_bucket": "mdmtest-2314f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014898535525:android:c24c9ac3bf973df4e56a8c",
+        "android_client_info": {
+          "package_name": "io.entgra.iot.community.agent"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAthWE6yylgkLUmcGr6qhJkVle2HOwCD8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
