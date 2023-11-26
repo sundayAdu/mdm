@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ ~ Copyright (c) 2019, Entgra.io. (http://entgra.io) All Rights Reserved.
+ ~
+ ~ Entgra (pvt) Ltd licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Entgra Device Management Agent</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_display_device_info">DisplayDeviceInfo</string>
+    <string name="title_head_authentication_error">Authentication Failed</string>
+    <string name="title_head_registration_error">Registration Failed</string>
+    <string name="title_head_fcm_unavailable">FCM Service unavailable</string>
+    <string name="title_head_connection_error">Connection Failed</string>
+    <string name="title_head_ownership_error">Unauthorized Action</string>
+    <string name="title_head_notification_error">Notification failed</string>
+    <string name="device_admin_enabled">Device Admin Enabled</string>
+    <string name="device_admin_disabled">Device Admin Disabled</string>
+    <string name="device_not_compatible_error_title">Unable to launch the agent</string>
+    <string name="device_not_compatible_error">You are not allowed to enroll because your device is rooted and device OS version is older than 4.0.3</string>
+    <string name="device_not_compatible_error_os">You are not allowed to enroll because your device OS version is older than 4.0.3</string>
+    <string name="device_not_compatible_error_root">You are not allowed to enroll because your device is rooted.</string>
+    <string name="device_not_compatible_with_android_for_work">Device is incompatible with Android For Work.</string>
+    <string name="device_compatible_with_android_for_work">Device is compatible with Android For Work.</string>
+    <string name="device_compatible">Compatible device</string>
+    <string name="title_activity_authentication_error">AuthenticationError</string>
+    <string name="title_activity_notification">NotificationActivity</string>    <string name="title_activity_notify">NotifyActivity</string>
+    <string name="title_activity_alert">Message from IoT Server</string>
+    <string name="device_admin_enable_alert">This will enable device administration</string>
+    <string name="background_service_message">Agent is running in background</string>
+    <string name="device_enroll_type_byod">BYOD</string>
+    <string name="device_enroll_type_cope">COPE</string>
+    <string name="title_init_msg_error">Initialization Failed. Please try again.</string>
+    <string name="title_head_init_error">Initialization Failed</string>
+    <string name="title_head_confirm_pin">Retype the PIN to Confirm</string>    <string name="app_url">url</string>
+    <string name="app_type">type</string>
+    <string name="app_schedule">schedule</string>
+    <string name="app_identifier">appIdentifier</string>
+    <string name="alarm_scheduled_operation">scheduledOperation</string>
+    <string name="alarm_scheduled_operation_payload">scheduledOperationPayload</string>
+    <string name="app_uri">packageUri</string>
+    <string name="alarm_schedule">schedule</string>
+    <string name="alert_message">Message</string>
+    <string name="kiosk_application_package_split_regex">_</string>
+    <string name="whitelist_package_split_regex">,</string>
+    <!-- TEXT FIELD HINTS -->
+    <string name="hint_new_pin">New PIN Code</string>
+
+    <!-- TOAST MESSAGES -->
+    <string name="toast_message_pin_change_success">PIN Code changed successfully</string>
+    <string name="toast_message_pin_change_failed">Old pin code you entered is wrong, please try again</string>
+    <string name="toast_message_enter_server_address">Please enter Server Address, i.e : www.abc.com</string>
+    <string name="toast_error_username">Please enter username</string>
+    <string name="toast_error_password">Please enter password</string>
+    <string name="toast_message_wipe">Device is being wiped</string>
+    <string name="toast_message_reboot">Device is being rebooted</string>
+    <string name="toast_message_vpn">VPN profile received from the device administrator</string>
+    <string name="toast_message_wipe_failed">Device wipe failed due to wrong PIN</string>
+    <string name="toast_message_reboot_failed">Device reboot failed due to insufficient privileges</string>
+    <string name="toast_message_disenroll">Device disenrolled</string>
+    <string name="toast_message_disabled_reload">Admin has disabled page reload</string>
+
+    <!-- INTENT EXTRAS -->
+    <string name="intent_extra_from_activity">from_activity_name</string>
+    <string name="intent_extra_regid">regid</string>
+    <string name="intent_extra_main_activity">main_activity_name</string>
+    <string name="intent_extra_message_text">messageText</string>
+    <string name="intent_extra_message_title">messageTitle</string>
+    <string name="intent_extra_token">token</string>
+    <string name="intent_extra_data">data</string>
+    <string name="intent_extra_code">code</string>
+    <string name="intent_extra_operation_id">id</string>
+    <string name="intent_extra_payload">payload</string>
+    <string name="intent_extra_message_id">msgID</string>
+    <string name="intent_extra_status">status</string>
+    <string name="intent_extra_status_ok">200</string>
+    <string name="intent_extra_status_accepted">202</string>
+    <string name="intent_extra_status_fail">400</string>
+    <string name="intent_extra_response">response</string>
+    <string name="intent_extra_fresh_reg_flag">freshRegFlag</string>
+    <string name="intent_extra_username">username</string>
+    <string name="intent_extra_ssid">ssid</string>
+    <string name="intent_extra_server">serverAddress</string>
+    <string name="intent_extra_schedule">schedule</string>
+    <string name="pref_key_schedule">firmware_upgrade_schedule</string>
+    <string name="intent_extra_server_port">serverPort</string>
+    <string name="intent_extra_shared_secret">sharedSecret</string>
+    <string name="intent_extra_dns">dnsServer</string>
+    <string name="intent_extra_lock_code">lockCode</string>
+    <string name="intent_extra_password">password</string>
+    <string name="intent_extra_function">function</string>
+    <string name="intent_extra_enable">enable</string>
+    <string name="intent_extra_disable">disable</string>
+    <string name="intent_extra_encrypt">encrypted</string>
+    <string name="intent_extra_notification">notification</string>
+    <string name="intent_extra_identity">identity</string>
+    <string name="intent_extra_title">title</string>
+    <string name="intent_extra_type">type</string>
+    <string name="intent_extra_package">package</string>
+    <string name="intent_extra_policies">policies</string>
+    <string name="intent_extra_name">name</string>
+    <string name="intent_extra_not_violated">notviolated</string>
+    <string name="intent_extra_not_rooted">notrooted</string>
+    <string name="intent_extra_platform_id">platform_id</string>
+    <string name="intent_extra_os">os</string>
+    <string name="intent_extra_enterprise">enterprise</string>
+    <string name="intent_extra_android">android</string>
+    <string name="intent_extra_public">public</string>
+    <string name="intent_extra_web">webapp</string>
+    <string name="intent_extra_at">\/@</string>
+    <string name="intent_extra_space">&#160;</string>
+    <string name="intent_extra_comma">, \/ </string>
+    <string name="intent_extra_stop_ringing">Your phone is ringing</string>
+    <string name="intent_extra_alert">alert</string>
+    <string name="intent_extra_ring">ring</string>
+    <string name="intent_extra_profile_name">profileName</string>
+    <string name="intent_extra_enable_system_apps">enableSystemApps</string>
+    <string name="intent_extra_enable_google_play_apps">enablePlaystoreApps</string>
+    <string name="intent_extra_hide_system_apps">hideSystemApps</string>
+    <string name="intent_extra_unhide_system_apps">unhideSystemApps</string>
+    <!-- POLICY CONFIGURATION FIELDS -->
+    <string name="policy_password_pin_age_in_days">maxPINAgeInDays</string>
+    <string name="policy_email_display_name">displayname</string>
+    <string name="policy_email_username">username</string>
+    <string name="policy_email_password">password</string>
+    <string name="policy_email_host">hostname</string>
+    <string name="policy_runtime_permission_default_permission_type">defaultType</string>
+    <string name="policy_runtime_permission_permitted_applications">permittedApplications</string>
+
+
+    <!-- POLICY VIOLATION MESSAGES -->
+    <string name="policy_violation_wifi">\nYou are not using company WIFI account, please change your WIFI configuration \n</string>
+    <string name="policy_violation_wifi_tail">You are not using company WIFI account, please change your WIFI configuration \n</string>
+    <string name="policy_violation_encryption">\nYour device should be encrypted according to the policy, please enable device encryption through device settings\n</string>
+    <string name="policy_violation_encryption_tail">Your device should be encrypted according to the policy, please enable device encryption through device settings \n</string>
+    <string name="policy_violation_mute">\nYour phone should be muted according to the policy, please mute your phone \n</string>
+    <string name="policy_violation_mute_tail">Your phone should be muted according to the policy, please mute your phone \n</string>
+    <string name="policy_violation_password">\nYour screen lock password doesn\'t meet current policy requirement. Please reset your passcode \n</string>
+    <string name="policy_violation_password_tail">Your screen lock password doesn\'t meet current policy requirement. Please reset your passcode \n</string>
+    <string name="policy_violation_password_tail_wp">Your work profile screen lock password doesn\'t meet current policy requirement. Please reset your passcode \n</string>
+    <string name="policy_violation_title">Device Passcode Settings</string>
+    <string name="policy_violation_title_wp">Work Profile Passcode Settings</string>
+
+    <!-- SHARED PREF KEYS -->
+    <string name="shared_pref_policy">policy</string>
+    <string name="shared_pref_configuration">configuration</string>
+    <string name="shared_pref_notifier">notifierType</string>
+    <string name="shared_pref_frequency">notifierFrequency</string>
+    <string name="shared_pref_gcm">gcmSenderId</string>
+    <string name="shared_pref_config_key">name</string>
+    <string name="shared_pref_config_value">value</string>
+    <string name="shared_pref_registered">registered</string>
+    <string name="shared_pref_ip">ip</string>
+    <string name="shared_pref_eula">eula</string>
+    <string name="shared_pref_regId">regId</string>
+    <string name="shared_pref_username">username</string>
+    <string name="shared_pref_pin">pin</string>
+    <string name="shared_pref_command">command</string>
+    <string name="shared_pref_reg_success">1</string>
+    <string name="shared_pref_reg_fail">0</string>
+    <string name="shared_pref_reg_type">deviceType</string>
+    <string name="shared_pref_sender_id">senderID</string>
+    <string name="shared_pref_message_mode">mode</string>
+    <string name="shared_pref_interval">interval</string>
+    <string name="username">username</string>
+    <string name="shared_pref_device_active">deviceActive</string>
+    <string name="shared_pref_client_id">clientId</string>
+    <string name="shared_pref_client_secret">clientSecret</string>
+    <string name="shared_pref_client_credentials">clientCredentials</string>
+    <string name="shared_pref_operators">operators</string>
+    <string name="shared_pref_default_array">[]</string>
+    <string name="shared_pref_default_string"></string>
+    <string name="shared_pref_default_status">true</string>
+    <string name="shared_pref_false_status">false</string>
+    <string name="shared_pref_os_build_date">firmwareBuildDate</string>
+    <string name="shared_pref_reboot_op_id">rebootOpId</string>
+    <string name="shared_pref_reboot_done">rebootDone</string>
+    <string name="shared_pref_reboot_status">rebootStatus</string>
+    <string name="shared_pref_reboot_result">rebootResult</string>
+
+    <!-- ERROR MESSAGES -->
+    <string name="error_clear_passcode_nougat">Passcode clearing is not supported in the BYOD enrollment for Android Nougat upwards</string>
+    <string name="error_clear_passcode">Passcode clearing is not supported by the device</string>
+    <string name="error_connect_to_server">Could not connect to server please check your internet connection and try again</string>
+    <string name="error_heading_connection">Connection Error</string>
+    <string name="error_registration_failed">Registration Failed</string>
+    <string name="error_unregistration_failed">Unregistration Failed</string>
+    <string name="error_authorization_failed">Access Denied</string>
+    <string name="error_enrollment_failed">Enrollment Failed</string>
+    <string name="enrollment_success">Device is enrolled to IoT Server</string>
+    <string name="unenrollment_success">Device is dis-enrolled from IoT Server</string>
+    <string name="error_enrollment_failed_detail">Enrollment failed, please contact administrator.</string>
+    <string name="error_auth_failed_detail">Authentication failed due to a connection failure please check your network connection and try again.</string>
+    <string name="error_authentication_failed">Incorrect login information. Please try again.</string>
+    <string name="error_network_unavailable">Network connectivity is unavailable. Please check your network connectivity and make sure you are not in power saving mode.</string>
+    <string name="error_for_all_unknown_registration_failures">Cannot proceed the registration. Please contact administrator.</string>
+    <string name="error_for_fcm_unavailability">FCM Service is unavailable. This program requires FCM services to function. Please contact administrator.</string>
+    <string name="error_for_all_unknown_authentication_failures">Cannot proceed the authentication. Please contact administrator.</string>
+    <string name="error_for_all_unknown_unregister_failures">Cannot unregister the device. Please contact administrator.</string>
+    <string name="error_for_all_unknown_notification_failures">Cannot execute the notification. Please contact administrator.</string>
+    <string name="error_internal_server">Server is unavailable. Please contact administrator.</string>
+    <string name="error_encrypt_policy">\nYour device should be encrypted according to the policy, please enable device encryption through device settings\n</string>
+    <string name="error_app_install_policy">\nFollowing apps must be installed on your device, please install them. \n</string>
+    <string name="error_app_uninstall_policy">\nFollowing apps are blacklisted by your IoT Admin, please remove them. \n</string>
+    <string name="error_wifi_policy">\nYou are not using company WIFI account, please change your WIFI configuration \n</string>
+    <string name="error_work_profile_policy">\nYour work-profile configurations are not adhering to the policy, please undo if any customizations have been done. \n</string>
+    <string name="error_runtime_permission_policy">\n Your current runtime permission policy has been changed from what is requested by the administrator. \n</string>
+    <string name="error_title">Error!</string>
+    <string name="error_auto_enrollment_fail">Unable to enroll the device</string>
+    <string name="error_enrollment_failed_incorrect_device_info">Error occurred while building the device info payload.</string>
+    <string name="error_enrollment_check_failed">Enrollment check failed. Please contact administrator</string>
+    <string name="error_unenrollment_failed">Unenrollment failed. Please contact administrator</string>
+    <string name="error_unenrollment_no_response">Auto unenrollment failed, server failed to respond to the unenrollment request.</string>
+    <string name="device_admin_canceled">Device admin prompt canceled by the user</string>
+    <!-- DIALOG TITLES AND MESSAGES -->
+    <string name="dialog_authenticate">Authenticating</string>
+    <string name="dialog_registering">Registering with %1$s</string>
+    <string name="dialog_tenant_resolving">Resolving Organizations</string>
+    <string name="dialog_title_system_app_required">SystemApp required</string>
+    <string name="dialog_gps_settings">GPS Settings</string>
+    <string name="dialog_gps_message">GPS is not enabled. Do you want to go to settings menu to enable GPS?</string>
+    <string name="dialog_please_wait">Please wait…</string>
+    <string name="dialog_configuring_fcm">Configuring FCM. This may take few minutes. Please wait…</string>
+    <string name="dialog_checking_reg">Checking Registration Info</string>
+    <string name="dialog_sender_id">Retrieving server settings</string>
+    <string name="dialog_license_agreement">Retrieving policy agreement</string>
+    <string name="dialog_enrolling">Enrolling Device</string>
+    <string name="dialog_pin_confirmation">Are you sure you want to set </string>
+    <string name="dialog_pin_confirmation_end"> as your PIN code?</string>
+    <string name="dialog_init_confirmation">You have set your server address to </string>
+    <string name="dialog_init_middle">Your device is a </string>
+    <string name="dialog_init_device_type">Device type</string>
+    <string name="dialog_init_end"> device, are you sure you want to proceed ?</string>
+    <string name="dialog_init_end_general"> are you sure you want to proceed ?</string>
+    <string name="dialog_enrollment_confirm_cloud">Are you sure you want to enroll your device with WSO2 Device Cloud?</string>
+    <string name="dialog_unregister">You are trying to unregister from IoT. Are you sure you want to proceed ?</string>
+    <string name="dialog__location_event_listening_enable">You are trying to enable location event listening. Are you sure you want to proceed?</string>
+    <string name="dialog_location_event_listening_disable">You are trying to disable location event listening. Are you sure you want to proceed?</string>
+    <string name="dialog_system_app_required">Please install the Entgra System App to continue enrollment as a COPE user.</string>
+    <string name="dialog_tenants_not_available">You do not have any associated organizations. Please contact your administrator</string>
+    <string name="dialog_select_tenant">Select an Organization to register your device with.</string>
+    <string name="dialog_do_not_distrub_title">Permission for do not disturb mode change</string>
+    <string name="dialog_read_network_usage_title">Permission for read Network Usage</string>
+    <string name="dialog_write_settings_title">Permission for enable Write Settings</string>
+    <string name="dialog_do_not_distrub_message">Some operations such as mute, requires agent
+        application to be able to control do not disturb mode, please enable it from
+        the next screen. After ticking, please press back and return to the agent</string>
+    <string name="dialog_read_network_usage_message">Some operations needs to read the Network Usage Access on the device,
+        select the Entgra Device Management Agent and please enable the permit usage access.
+        After ticking, please press back and return to the agent</string>
+    <string name="dialog_write_settings_message">Some operations such as change orientation, requires agent
+        application to be able to write settings, please enable it from
+        the next screen. After ticking, please press back and return to the agent</string>
+    <string name="message_sim_card_not_detected">Sim Card not detected</string>
+    <string name="message_phone_number_not_provided">Phone number is not provided by SIM card</string>
+    <string name="message_api_level_not_support">Data Usage is not supported for this Android version!</string>
+
+
+    <!-- REGISTRATION -->
+    <string name="register_button_text">Register</string>
+    <string name="register_text_view_text_unregister">Device un-registration successful, click to re-register to the IoT</string>
+
+    <!-- AGENT SETTINGS ACTIVITY -->
+
+    <!-- ALREADY REGISTERED ACTIVITY -->
+    <string name="dialog_message_unregistering">Unregistering Device</string>
+    <string name="dialog_message_please_wait">Please wait</string>
+
+    <!-- DEVICE INFO ACTIVITY -->
+    <string name="info_label_imei">IMEI:</string>
+    <string name="info_label_device">Device:</string>
+    <string name="info_label_model">Model:</string>
+    <string name="info_label_no_sim">No Sim</string>
+    <string name="info_label_operator">Operator:</string>
+    <string name="info_label_imsi">IMSI:</string>
+    <string name="info_label_os">OS:</string>
+    <string name="info_label_rooted">Rooted:</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">Ok</string>
+    <string name="info_label_settings">Settings</string>
+    <string name="info_label_cancel">Cancel</string>
+
+    <!-- UI TITLES -->
+    <string name="button_ok">OK</string>
+    <string name="button_continue">Continue</string>
+    <string name="button_exit">Exit</string>
+    <string name="txt_message_title">Entgra Device Management</string>
+    <string name="company_title">Entgra</string>
+    <string name="ringing_text">Your Device is Ringing</string>
+    <string name="btn_sign_in">Sign In</string>
+    <string name="btn_sign_out">Sign Out</string>
+    <string name="button_agree">Agree</string>
+    <string name="txt_message">Message from IoT Server</string>
+    <string name="txt_notification">Message from IoT Server</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="authentication_failed">Authentication Failed</string>
+    <string name="try_again">Try again</string>
+    <string name="txt_registration_id_not_available">Registration ID is not available</string>
+    <string name="txt_gatewayhost_missing">Gateway host not provided or pre-configured</string>
+    <string name="txt_regid_unavailable">Registration ID is not available</string>
+    <string name="txt_license_not_accepted">Canceling enrollment. License not accepted</string>
+    <string name="txt_policy_agreement">Policy Agreement</string>
+    <string name="txt_server_address">Server Address</string>
+    <string name="txt_organization">Organization</string>
+    <string name="txt_username">Username</string>
+    <string name="txt_password">Password</string>
+    <string name="network_not_available_message">IoT Device enrollment failed, check your internet connection and re-launch the agent to continue</string>
+    <string name="txt_old_pin">Old PIN Code</string>
+    <string name="txt_enter_pin">Enter PIN Code</string>
+    <string name="txt_new_pin">Set PIN Code</string>
+    <string name="txt_start_reg">Start Registration</string>
+    <string name="txt_start_enable_work_profile">Setup Work-Profile</string>
+    <string name="txt_byod_enrollment">BYOD Enrollment</string>
+    <string name="txt_cope_enrollment">COPE Enrollment</string>
+    <string name="txt_namual_enrollment">MANUAL ENROLLMENT</string>
+    <string name="txt_skip_to_enrolling">Skip and go to Enrollment</string>
+    <string name="toast_app_installation_failed">Application installation failed, please contact administrator</string>
+    <string name="toast_app_removal_failed">Application removal failed, please contact administrator</string>
+    <string name="txt_sign_in">Please sign in to register your device with Entgra IoT Server.</string>
+    <string name="txt_sign_in_cloud">Please sign in to register your device with Entgra Device Cloud.</string>
+    <string name="txt_sign_up">Don\'t have an account? Sign up for free with Device cloud and try it out!</string>
+    <string name="txt_sign_up_linkify">Sign up</string>
+    <string name="txt_lblpin">This PIN code will be used to authorize critical remote operations (ex: remote device wipe) performed against the device by administrators.</string>
+    <string name="txt_disclaimer_title">Disclaimer</string>
+    <string name="txt_disclaimer">
+        This Entgra Device Management Agent app requires access to certain administrator functions on your device. Here is a list of those administrator functions and why access is required for each of them:
+\n\n- Erase All Data: This permission is required to enable you to  remotely use the factory data reset option.
+\n\n- Change the Screen Lock: This permission is required to allow you to remotely change your screen lock type.
+\n\n- Set password rules: This permission  is required to allow you to remotely set password rules to your device.
+\n\n- Monitor screen unlock attempts: This permission is required to allow you to detect unlock attempts on your device with incorrect passwords and to  enable factory resetting of your device if  the number of unlock attempts are exceeded.
+\n\n- Lock Screen: This permission is required to allow you to remotely lock the screen of your device.
+\n\n- Set screen lock password expiration: This permission is required to allow you to remotely set an expiration time for your screen lock password.
+\n\n- Set storage encryption: This permission is required to allow remote encryption of your device storage.
+\n\n- Disable cameras: This is required to for you to remotely allow/disallow camera usage on your device.
+\n\nYou will be prompted to Activate Device Admin after registering your device with Entgra IoT Server and by clicking "Activate" you consent to this App having access to the above administrator functions on your device.
+\n\nYou can revoke your consent at anytime by opening Entgra Device Management Agent app and clicking on "Unregister" or by going to Settings \-\>Security \-\> Device Administrators and Deactivating Entgra Device Management Agent.
+\n\nAll remote operations can only be triggered from the Device Management Console in the Entgra IoT Server and can only be performed by authorized user.
+\n\nAll data sent to the Entgra IoT Server is only accessible to the authorized user and can be permanently removed if needed.
+    </string>
+    <string name="hint_retype_pin">Retype PIN Code</string>
+    <string name="lbl_pin_title">Please enter PIN code</string>
+    <string name="button_unregister_text">"You have successfully enrolled your device! If you want to unregister, tap Unregister."</string>
+    <string name="txt_managed_profile_enable">Managed Profile is Enabled</string>
+    <!-- APPLICATION MANAGER -->
+    <string name="application_mgr_download_location">/Download/</string>
+    <string name="application_mgr_download_file_name">update.apk</string>
+    <string name="download_mgr_download_file_name">update.apk</string>
+    <string name="application_mgr_mime">application/vnd.android.package-archive</string>
+    <string name="application_package_prefix">package:</string>
+    <string name="shared_pref_installed_app">appPackageName</string>
+    <string name="shared_pref_installed_file">appFileName</string>
+    <string name="application_package_launcher_install_action">com.android.launcher.action.INSTALL_SHORTCUT</string>
+    <string name="application_package_launcher_uninstall_action">com.android.launcher.action.UNINSTALL_SHORTCUT</string>
+    <string name="android_download_manager_ui_resolver">com.android.providers.downloads.ui</string>
+    <string name="android_download_manager_list_resolver">com.android.providers.downloads.ui.DownloadList</string>
+    <string name="downloader_message_title">Entgra Agent is downloading an application</string>
+
+    <!-- SERVER UTILITIES -->
+    <string name="server_util_req_type_post">POST</string>
+    <string name="server_util_req_type_get">GET</string>
+    <string name="title_activity_log">LogActivity</string>
+
+    <!-- Headings -->
+    <string name="registration_info">If your server runs on a different port, server address should be like www.abc.com:8280</string>
+    <string name="enable_work_profile_heading">Your device supports Android For Work. Set-up the work-profile first and let the Agent Control the Work Profile.</string>
+
+    <!-- Validation Errors -->
+    <string name="validation_pin_confirm">PINs don\'t match, Please re-enter</string>
+
+    <!-- Operation Result -->
+    <string name="operation_code">code</string>
+    <string name="operation_properties">properties</string>
+    <string name="operation_type">type</string>
+    <string name="operation_id">id</string>
+    <string name="operation_status">status</string>
+    <string name="app_download_progress">app_progress</string>
+    <string name="firmware_upgrade_retry_pending">firmwareUpgradeRetryPending</string>
+    <string name="firmware_upgrade_retries">firmwareUpgradeRetries</string>
+    <string name="firmware_upgrade_response_message">firmwareUpgradeResponseMessage</string>
+    <string name="firmware_upgrade_response_id">firmwareUpgradeResponseId</string>
+    <string name="firmware_upgrade_response_status">firmwareUpgradeResponseStatus</string>
+    <string name="is_automatic_firmware_upgrade">isAutomaticFirmwareUpgrade</string>
+    <string name="firmware_upgrade_automatic_retry">autoRetry</string>
+    <string name="app_install_failed_message">appInstallFailedMessage</string>
+    <string name="app_uninstall_failed_message">appUnInstallFailedMessage</string>
+    <string name="app_uninstall_id">appUninstallOperationId</string>
+    <string name="app_install_id">appInstallOperationId</string>
+    <string name="app_install_code">appInstallOperationCode</string>
+    <string name="app_uninstall_code">appUninstallOperationCode</string>
+    <string name="app_install_status">appInstallStatus</string>
+    <string name="app_uninstall_status">appUnInstallStatus</string>
+    <string name="operation_receivedTimeStamp">receivedTimeStamp</string>
+    <string name="operation_createdTimeStamp">createdTimeStamp</string>
+    <string name="operation_payLoad">payLoad</string>
+    <string name="operation_configProperties">configProperties</string>
+    <string name="operation_enabled">enabled</string>
+    <string name="operation_value_null">null</string>
+    <string name="operation_value_completed">COMPLETED</string>
+    <string name="operation_value_pending">PENDING</string>
+    <string name="operation_value_error">ERROR</string>
+    <string name="operation_value_progress">IN_PROGRESS</string>
+    <string name="app_status_value_download_started">DOWNLOAD_STARTED</string>
+    <string name="app_status_value_download_completed">DOWNLOAD_COMPLETED</string>
+    <string name="app_status_value_download_failed">DOWNLOAD_FAILED</string>
+    <string name="app_status_value_install_failed">INSTALL_FAILED</string>
+    <string name="app_status_value_installed">INSTALLED</string>
+    <string name="operation_install">install</string>
+    <string name="operation_uninstall">uninstall</string>
+
+    <string name="title_activity_lock">LockActivity</string>
+    <string name="txt_lock_activity">Device is locked. Please contact administrator</string>
+
+    <string name="connecting">VPN is connecting…</string>
+    <string name="connected">VPN is connected</string>
+    <string name="disconnected">VPN is disconnected</string>
+    <string name="split_delimiter">,</string>
+    <!-- Android For Work User Restrictions -->
+    <string name="wipe_the_device">Wipe the device</string>
+    <string name="wipe_confirmation">Do you want to wipe the device?</string>
+
+    <string name="authentication_successful">Successfully Authenticated!</string>
+    <string name="title_need_to_sign_in">Authentication failure</string>
+    <string name="msg_need_to_sign_in">Please sign in again by providing password.</string>
+    <string name="title_app_install_request">Install Enterprise App</string>
+    <string name="msg_app_install_request">Your organization admin wants to install an Enterprise application on
+        your mobile.</string>
+    <string name="msg_public_app_install_request">Your organization admin wants to install an public application on
+        your KIOSK device.Please install the app from notification.</string>
+    <string name="title_app_uninstall_request">Uninstall App</string>
+    <string name="toast_message_lock_task_disabled">LockTask mode disabled</string>
+    <string name="toast_message_lock_task_enabled">LockTask mode enabled</string>
+    <string name="msg_app_uninstall_request">Your organization admin wants to uninstall an application from
+        your mobile.</string>
+    <string name="title_need_permissions">Permissions Missing</string>
+    <string name="msg_need_permissions">Please allow necessary permissions.</string>
+    <string name="title_need_location">Location disabled</string>
+    <string name="msg_need_location">Please enable location to work agent properly.</string>
+    <string name="footer_text" tools:ignore="PluralsCandidate">v%1$s ©%2$d Entgra</string>
+    <string name="txt_file_info">size: %1$s | Last Modified: %2$s</string>
+    <string name="txt_last_server_sync">Last server sync</string>
+    <string name="txt_device_id">Device Information</string>
+    <string name="txt_device_id_message">Show device model, OS version IMEI and other information</string>
+    <string name="txt_change_pin">Change PIN</string>
+    <string name="txt_change_pin_message">Click here to change PIN code</string>
+    <string name="txt_unregistration">Unregister</string>
+    <string name="txt_unregistration_message">Click here to unregister device</string>
+    <string name="txt_agent_version">Agent Version</string>
+    <string name="txt_never">Never synced. Tap here to sync.</string>
+    <string name="txt_sync">Synchronizing…</string>
+
+    <!-- Date Util -->
+    <string name="date_util_term_less">less than</string>
+    <string name="date_util_term_a">a</string>
+    <string name="date_util_term_an">an</string>
+
+    <string name="date_util_unit_second">second</string>
+    <string name="date_util_unit_seconds">seconds</string>
+    <string name="date_util_unit_minute">minute</string>
+    <string name="date_util_unit_minutes">minutes</string>
+    <string name="date_util_unit_hour">hour</string>
+    <string name="date_util_unit_hours">hours</string>
+    <string name="date_util_unit_day">day</string>
+    <string name="date_util_unit_days">days</string>
+    <string name="date_util_unit_month">month</string>
+    <string name="date_util_unit_months">months</string>
+    <string name="date_util_unit_year">year</string>
+    <string name="date_util_unit_years">years</string>
+
+    <string name="date_util_prefix_lt">less than a</string>
+    <string name="date_util_prefix_about">about</string>
+    <string name="date_util_prefix_over">over</string>
+    <string name="date_util_prefix_almost">almost</string>
+
+    <string name="date_util_suffix">ago</string>
+
+    <!-- AfW User Restrictions -->
+    <string name="DISALLOW_CROSS_PROFILE_COPY_PASTE">no_cross_profile_copy_paste</string>
+    <string name="DISALLOW_CONFIG_CREDENTIALS">no_config_credentials</string>
+    <string name="DISALLOW_CONFIG_VPN">no_config_vpn</string>
+    <string name="DISALLOW_APPS_CONTROL">no_control_apps</string>
+    <string name="DISALLOW_DEBUGGING_FEATURES">no_debugging_features</string>
+    <string name="DISALLOW_INSTALL_APPS">no_install_apps</string>
+    <string name="DISALLOW_INSTALL_UNKNOWN_SOURCES">no_install_unknown_sources</string>
+    <string name="DISALLOW_MODIFY_ACCOUNTS">no_modify_accounts</string>
+    <string name="DISALLOW_OUTGOING_BEAM">no_outgoing_beam</string>
+    <string name="DISALLOW_OUTGOING_CALLS">no_outgoing_calls</string>
+    <string name="DISALLOW_SHARE_LOCATION">no_share_location</string>
+    <string name="DISALLOW_UNINSTALL_APPS">no_uninstall_apps</string>
+    <string name="DISALLOW_CONFIG_CELL_BROADCASTS">no_config_cell_broadcasts</string>
+    <string name="DISALLOW_CONFIG_MOBILE_NETWORKS">no_config_mobile_networks</string>
+    <string name="DISALLOW_BLUETOOTH">no_bluetooth</string>
+    <string name="DISALLOW_SMS">no_sms</string>
+    <string name="DISALLOW_ADJUST_VOLUME">no_adjust_volume</string>
+    <string name="DISALLOW_CONFIG_BLUETOOTH">no_config_bluetooth</string>
+    <string name="DISALLOW_CONFIG_WIFI">no_config_wifi</string>
+    <string name="DISALLOW_MOUNT_PHYSICAL_MEDIA">no_physical_media</string>
+    <string name="DISALLOW_CREATE_WINDOWS">no_create_windows</string>
+    <string name="DISALLOW_SAFE_BOOT">no_safe_boot</string>
+    <string name="DISALLOW_FACTORY_RESET">no_factory_reset</string>
+    <string name="DISALLOW_REMOVE_USER">no_remove_user</string>
+    <string name="DISALLOW_ADD_USER">no_add_user</string>
+    <string name="DISALLOW_NETWORK_RESET">no_network_reset</string>
+    <string name="DISALLOW_USB_FILE_TRANSFER">no_usb_file_transfer</string>
+    <string name="ENSURE_VERIFY_APPS">ensure_verify_apps</string>
+    <string name="DISALLOW_UNMUTE_MICROPHONE">no_unmute_microphone</string>
+    <string name="ALLOW_PARENT_PROFILE_APP_LINKING">allow_parent_profile_app_linking</string>
+    <string name="DISALLOW_CONFIG_TETHERING">no_config_tethering</string>
+
+    <!--File Transfer-->
+    <string name="intent_extra_operation_object">operation</string>
+    <string name="FILE_UPLOAD_ID">FILE_UPLOAD_ID</string>
+    <string name="FILE_UPLOAD_STATUS">FILE_UPLOAD_STATUS</string>
+    <string name="FILE_UPLOAD_RESPONSE">FILE_UPLOAD_RESPONSE</string>
+    <string name="FILE_DOWNLOAD_ID">FILE_DOWNLOAD_ID</string>
+    <string name="FILE_DOWNLOAD_STATUS">FILE_DOWNLOAD_STATUS</string>
+    <string name="FILE_DOWNLOAD_RESPONSE">FILE_DOWNLOAD_RESPONSE</string>
+    <string name="NOTIFICATION_TITLE">is requested by Entgra IoT agent.</string>
+    <string name="NOTIFICATION_TICKER">Entgra IoT agent</string>
+    <string name="NOTIFICATION_ALLOW">Allow</string>
+    <string name="NOTIFICATION_CANCEL">Cancel</string>
+
+    <string name="txt_time">Time:</string>
+    <string name="txt_battery">Battery:</string>
+    <string name="txt_date">Date:</string>
+    <string name="txt_brightness">Brightness</string>
+    <string name="txt_0_gb">0 GB</string>
+    <string name="txt_total">Total</string>
+    <string name="txt_available">Available</string>
+    <string name="txt_0_mb">0 MB</string>
+    <string name="txt_battery_health">Battery Health</string>
+    <string name="txt_n_a">N/A</string>
+    <string name="txt_status">Status</string>
+    <string name="txt_current_cycle">Current Cycle</string>
+    <string name="txt_usage_of_last_30_days">Usage of Last 30 Days</string>
+    <string name="txt_mobile_data">Mobile Data</string>
+    <string name="txt_wifi">WiFi</string>
+    <string name="txt_exit">Exit</string>
+    <string name="txt_start">Start</string>
+    <string name="txt_launch">Launch</string>
+    <string name="txt_no_apps_available">No apps available</string>
+    <string name="txt_device_initializing">Your device is being initialized.
+        This may take several minutes.</string>
+    <string name="txt_launch_the_app">Please click here to launch the app</string>
+    <string name="txt_dismiss">Dismiss</string>
+    <string name="txt_pswd_reset_authorization_title">Authorize remote password reset</string>
+    <string name="txt_pswd_reset_authorization_msg">Please provide your password to authorize remote
+        password reset via Entgra Device Management Agent</string>
+
+    <!--Cert Install-->
+    <string name="title_cert_install_request">Install Certificate</string>
+    <string name="msg_cert_install_request">Your organization admin wants to install a certificate on
+        your mobile.</string>
+    <string name="txt_cli_provision">Please wait until the device is provisioned via ADB</string>
+</resources>
